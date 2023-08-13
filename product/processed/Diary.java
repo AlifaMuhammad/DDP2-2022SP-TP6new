@@ -1,6 +1,9 @@
+package product.processed;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+
+import product.Product;
 
 
 public class Diary extends Product{

@@ -1,13 +1,16 @@
-public class Fruit extends Product{
-    private boolean isLocal;
+import product.Product;
 
-    public Fruit(String name, int price, int stok, boolean isLocal){
+public class Veggie extends Product{
+    
+    private boolean isOrganic;
+
+    public Veggie(String name, int price, int stok, boolean isOrganic){
         super(name, price, stok);
-        this.isLocal = isLocal;
+        this.isOrganic = isOrganic;
     }
 
     public int checkDiscount(int quantity){
-        if(this.isLocal){
+        if(this.isOrganic){
             if(quantity >= 5)
                 return 30;
             else if(quantity >=3 )

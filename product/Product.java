@@ -1,4 +1,5 @@
-abstract class Product {
+package product;
+public abstract class Product {
     // TODO: Implement this class.
     private String name;
     private int price;
