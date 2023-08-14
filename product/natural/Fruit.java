@@ -7,7 +7,10 @@ public class Fruit extends Product{
         super(name, price, stok);
         this.isLocal = isLocal;
     }
-
+    
+    /**
+     * method untuk menghitung diskon yang diperoleh
+     */
     public int checkDiscount(int quantity){
         if(this.isLocal){
             if(quantity >= 5)

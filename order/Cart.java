@@ -8,6 +8,10 @@ public class Cart {
         this.orderList = new ArrayList<>();
     }
 
+    /**
+     * method untuki menghitung total harga
+     * @return
+     */
     public double getTotalPrice(){
         int totalPrice = 0;
         for (OrderItem orderItem : orderList) {
@@ -16,6 +20,10 @@ public class Cart {
         return totalPrice;
     }
 
+    /**
+     * method untuk menambah produk
+     * @param orderItem
+     */
     public void addOrderItem(OrderItem orderItem){
         orderList.add(orderItem);
     }

@@ -70,9 +70,8 @@ public class ShyourBox {
                     // use PrintGenericList for this feature
                     if (!loginCustomer.getCart().getOrderList().isEmpty()) {
                         System.out.println("Isi Keranjang:");
-                        for (OrderItem orderItem : loginCustomer.getCart().getOrderList()) {
-                            System.out.println(orderItem.toString());
-                        }
+                        PrintGenericList<OrderItem> printer1 = new PrintGenericList<>();
+                        printer1.printToConsole(loginCustomer.getCart().getOrderList());
                     } else {
                         System.out.println("Keranjang Anda kosong.");
                     }
@@ -87,6 +86,7 @@ public class ShyourBox {
                     String productName = scanner.next();
                     System.out.print("Masukan jumlah produk yang ingin dibeli: ");
                     int quantity = scanner.nextInt();
+                    
 
                     Product selectedProduct = searchProduct(productName);
                     if (selectedProduct != null) {
@@ -111,13 +111,12 @@ public class ShyourBox {
                         System.out.println("Tanggal Checkout: " + order.getOrderDate());
                         System.out.println("Total Harga: " + order.getTotalPrice());
                         System.out.println("Daftar Pembelian:");
-                        for (OrderItem orderItem : order.getCart().getOrderList()) {
-                            System.out.println(orderItem.toString());
-                        }
+                        PrintGenericList<OrderItem> printer2 = new PrintGenericList<>();
+                        printer2.printToConsole(order.getCart().getOrderList());
                         System.out.println();
                     }
                 }
-                    break;
+                break;
                 case 0:
                     System.err.println("Sampai Jumpa Kembali!");
                     break;
@@ -168,6 +167,11 @@ public class ShyourBox {
         return null;
     }
 
+    /**
+     * method untuk mencari apakah nama tersebut ada atau tidak
+     * @param name
+     * @return
+     */
     public Customer searchCustomer(String name) {
         // TODO: Implement this method.
         for (Customer customer : customers) {

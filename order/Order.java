@@ -14,6 +14,11 @@ public class Order {
         this.totalPrice = totalPrice;
     }
 
+
+    /**
+     * method unutk menentukan harga final
+     * @return
+     */
     public double getFinalPrice(){
         return totalPrice * (100 - discountRate) / 100;
     }

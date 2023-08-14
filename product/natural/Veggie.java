@@ -9,6 +9,9 @@ public class Veggie extends Product{
         this.isOrganic = isOrganic;
     }
 
+    /**
+     * method untuk menghitung diskon yang diperoleh
+     */
     public int checkDiscount(int quantity){
         if(this.isOrganic){
             if(quantity >= 5)

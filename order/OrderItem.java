@@ -11,6 +11,10 @@ public class OrderItem {
 
     };
 
+    /**
+     * method untuk menghitung harga final
+     * @return
+     */
     public double getFinalPrice() {
         double discount = this.product.checkDiscount(this.quantity);
         double price = (double) this.product.getPrice() * this.quantity;

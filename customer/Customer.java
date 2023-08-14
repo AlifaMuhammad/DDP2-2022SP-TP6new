@@ -21,6 +21,11 @@ public class Customer {
         this.name = name;
     }
 
+    /**
+     * method unutk menambahkan produk kedalam keranjang
+     * @param product
+     * @param quantity
+     */
     public void addToCard(Product product, int quantity){
         if (product.getStock() >= quantity) {
             OrderItem orderItem = new OrderItem(product, quantity);
@@ -31,13 +36,15 @@ public class Customer {
         }
     }
 
+    /**
+     * method untuk menampilkan data saat checkout
+     */
     public void checkout(){
         if (!cart.getOrderList().isEmpty()) {
         double totalPrice = cart.getTotalPrice();
         LocalDate currentDate = LocalDate.now();
         Order order = new Order(cart, 0, currentDate, totalPrice);
         orderHistory.add(order);
-        cart.getOrderList().clear();
         System.out.println("Berhasil Checkout");
     } else {
         System.out.println("Keranjang Anda Kosong");
