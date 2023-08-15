@@ -46,6 +46,12 @@ public class Customer {
         Order order = new Order(cart, 0, currentDate, totalPrice);
         orderHistory.add(order);
         System.out.println("Berhasil Checkout");
+        for (OrderItem orderItem : cart.getOrderList()) {
+            Product product = orderItem.getProduct();
+            int quantity = orderItem.getQuantity();
+            product.decreaseStock(quantity);
+        }
+        cart = new Cart();
     } else {
         System.out.println("Keranjang Anda Kosong");
     }

@@ -3,7 +3,7 @@ import java.time.LocalDate;
 import product.Product;
 
 public class GoldCustomer extends Customer{
-    private static final double DISCOUNT_RATE = 0.85;
+    public static final double DISCOUNT_RATE = 0.85;
 
     //TODO: lengkapi kelas berikut
     public GoldCustomer(String name){

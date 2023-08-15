@@ -34,4 +34,16 @@ public abstract class Product {
     
     public abstract int checkDiscount(int quantity);
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
 }
